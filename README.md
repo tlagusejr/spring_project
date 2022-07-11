@@ -3,6 +3,6 @@
 
 타입리프로 만든 ToDoList
 
-db:h2
+database:h2
 
-spring
+spring framwork
