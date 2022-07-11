@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    To-Do List
+</h1>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <!-- tr th:each : 행 반복문을 수행하겠다는 의미입니다 [여러 데이터 출력] -->
+        <tr th:each="list : ${tableList}">
+            <td><span th:text="${list.id}"></span></td>
+            <td><span th:text="${list.content}"></span></td>
+            <td>
+                <form method="get" action="delete">
+                    <p><input type="hidden" name="idx" th:value="${list.id}"/></p>
+                    <p><input type="submit" value="delete"></p>
+                </form>
+            </td>
+
+        </tr>
+        </tbody>
+
+    </table>
+
+</div>
+
+<div>
+    <form method="get" action="submit">
+        <p><label>Input List : <input type="text" name="content" ></label></p>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+    <form method="get" action="deleteall">
+        <p><input type="submit" value="delete-all"></p>
+    </form>
+</div>
+
+
+</body>
+</html>
