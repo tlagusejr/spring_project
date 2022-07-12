@@ -6,3 +6,5 @@
 database:h2
 
 spring framwork
+
+차후 할것 =>service 분리, 로그인, 부트스트랩 or json을 이용하여 vuejs등
